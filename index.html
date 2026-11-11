@@ -10,6 +10,7 @@
 <body>
     <div class="container min-vh-100 d-flex align-items-center justify-content-center">
         
+        <!-- Tela do Formulário -->
         <div id="tela-formulario" class="card shadow-lg border-0 main-card">
             <div class="card-body p-4 p-md-5 text-center">
                 <div class="mb-4">
@@ -21,7 +22,13 @@
                 <form id="form-signo">
                     <div class="mb-4">
                         <label for="data_nascimento" class="form-label fw-semibold">Data de Nascimento</label>
-                        <input type="date" class="form-control form-control-lg text-center" id="data_nascimento" required>
+                        <input 
+                            type="date" 
+                            class="form-control form-control-lg text-center" 
+                            id="data_nascimento" 
+                            name="data_nascimento" 
+                            required
+                        >
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg w-100 py-3 fw-semibold">
                         Descobrir meu signo 🔮
@@ -30,6 +37,7 @@
             </div>
         </div>
 
+        <!-- Tela do Resultado -->
         <div id="tela-resultado" class="card shadow-lg border-0 result-card d-none">
             <div class="card-body p-4 p-md-5">
                 <div class="text-center mb-4">
@@ -65,11 +73,14 @@
                 </div>
 
                 <div class="d-grid gap-2 mt-5">
-                    <button id="btn-voltar" class="btn btn-outline-primary btn-lg">← Descobrir outro signo</button>
+                    <button id="btn-voltar" class="btn btn-outline-primary btn-lg">
+                        ← Descobrir outro signo
+                    </button>
                 </div>
             </div>
         </div>
 
+        <!-- Loading -->
         <div id="loading" class="text-center text-white d-none">
             <div class="spinner-border text-light" role="status" style="width: 3rem; height: 3rem;"></div>
             <p class="mt-3">Consultando as estrelas...</p>
