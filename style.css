@@ -1,0 +1,58 @@
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+.main-card, .result-card {
+    max-width: 520px;
+    width: 100%;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+}
+
+.zodiac-icon {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.signo-emoji {
+    font-size: 5rem;
+    line-height: 1;
+}
+
+.info-box {
+    background: #f8f9fa;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    height: 100%;
+    border-left: 4px solid #0d6efd;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.35);
+    background: linear-gradient(135deg, #0b5ed7, #5a0dce);
+}
+
+.form-control:focus {
+    border-color: #6610f2;
+    box-shadow: 0 0 0 0.25rem rgba(102, 16, 242, 0.25);
+}
+
+@media (max-width: 576px) {
+    .main-card, .result-card {
+        margin: 1rem;
+    }
+    .signo-emoji {
+        font-size: 4rem;
+    }
+}
