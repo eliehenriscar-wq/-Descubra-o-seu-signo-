@@ -14,13 +14,16 @@ form.addEventListener('submit', async (e) => {
         return;
     }
 
+    // Mostra loading e esconde formulário
     telaFormulario.classList.add('d-none');
     loading.classList.remove('d-none');
 
     try {
         const response = await fetch('/api/signo', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({ data_nascimento: dataNascimento })
         });
 
@@ -30,6 +33,7 @@ form.addEventListener('submit', async (e) => {
             throw new Error(dados.erro || 'Erro ao buscar o signo');
         }
 
+        // Preenche os dados na tela de resultado
         document.getElementById('emoji-signo').textContent = dados.emoji;
         document.getElementById('nome-signo').textContent = dados.nome;
         document.getElementById('data-formatada').textContent = dados.data_formatada;
@@ -39,6 +43,7 @@ form.addEventListener('submit', async (e) => {
         document.getElementById('caracteristicas-signo').textContent = dados.caracteristicas;
         document.getElementById('descricao-signo').textContent = dados.descricao;
 
+        // Mostra resultado
         loading.classList.add('d-none');
         telaResultado.classList.remove('d-none');
 
@@ -49,6 +54,7 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
+// Botão voltar
 btnVoltar.addEventListener('click', () => {
     telaResultado.classList.add('d-none');
     telaFormulario.classList.remove('d-none');
